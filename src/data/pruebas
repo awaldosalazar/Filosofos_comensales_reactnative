@@ -1,0 +1,74 @@
+
+const atender = (lugar) => {
+    comensalinfo[lugar].estado = 'esperando...';
+    comensalinfo[lugar].status = 'warning';
+    mutex
+    .acquire()
+    .then(function(release) {
+    if (lugar != 0 && lugar != 4) {
+      if (tenedores[lugar - 1] === true && tenedores[lugar] === true) {
+        tenedores[lugar-1] = false;
+        tenedores[lugar] = false;
+        comensalinfo[lugar].estado = 'comiendo...';
+        comensalinfo[lugar].status = 'success';
+        modifica(personas);
+        setTimeout(() => {
+          comensalinfo[lugar].estado = 'llenoo...';
+          comensalinfo[lugar].status = 'error';
+          modifica(personas);
+          tenedores[lugar-1] = true;
+          tenedores[lugar] = true;
+          release();
+          },3000);
+      } else {
+        setTimeout(() => {
+          release();
+          atender(lugar);
+          },3000);
+      }
+    } else if (lugar === 0) {
+      if (tenedores[4] === true && tenedores[lugar + 1] === true) {
+        tenedores[0] = false;
+        tenedores[4] = false;
+        comensalinfo[lugar].estado = 'comiendo...';
+        comensalinfo[lugar].status = 'success';
+        modifica(personas);
+        setTimeout(() => {
+          comensalinfo[lugar].estado = 'llenoo...';
+          comensalinfo[lugar].status = 'error';
+          modifica(personas);
+          tenedores[0] = true;
+          tenedores[4] = true;
+          release();
+          },3000);
+      } else {
+       setTimeout(() => {
+          atender(lugar);
+          release();
+          },3000);
+      }
+    } else {
+      if (tenedores[lugar - 1] === true && tenedores[0] === true) {
+        tenedores[4] = false;
+        tenedores[3] = false;
+        comensalinfo[lugar].estado = 'comiendo...';
+        comensalinfo[lugar].status = 'success';
+        modifica(personas);
+        setTimeout(() => {
+          comensalinfo[lugar].estado = 'llenoo...';
+          comensalinfo[lugar].status = 'error';
+          modifica(personas);
+          tenedores[4] = true;
+          tenedores[3] = true;
+          release();
+          },3000);
+      } else {
+        setTimeout(() => {
+          atender(lugar);
+          release();
+          },3000);
+      }
+    }
+      //console.log(tenedores);
+    });
+  };

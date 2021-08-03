@@ -1,0 +1,41 @@
+export const Filosofos = [
+  {
+    id:0,
+    name:'Tales de Mileto',
+    estado:'pensando...',
+    lleno:false,
+    status:'primary',
+    image:'https://upload.wikimedia.org/wikipedia/commons/c/c6/Illustrerad_Verldshistoria_band_I_Ill_107.jpg',
+  },
+  {
+    id:1,
+    name:'Heráclito',
+    estado:'pensando...',
+    status:'primary',
+    lleno:false,
+    image:'https://www.biografiasyvidas.com/biografia/h/fotos/heraclito_2.jpg',
+  },
+  {
+    id:2,
+    name:'Anaxímenes',
+    estado:'pensando...',
+    status:'primary',
+    image:'https://www.biografiacortade.com/wp-content/uploads/2019/11/Anax%C3%ADmenes-de-Mileto.jpg',
+  },
+  {
+    id:3,
+    name:'Pitágoras',
+    estado:'pensando...',
+    status:'primary',
+    lleno:false,
+    image:'https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRE828YvOckocWwAGOixJyjqLNXjiJNk1FOuDbbTtNmYnuUSGWcnvUk677HRKMC',
+  },
+  {
+    id:4,
+    name:'Demócrito',
+    estado:'pensando...',
+    status:'primary',
+    lleno:false,
+    image:'https://lh3.googleusercontent.com/-QHLuXX1--Fg/WDiRtUXwmDI/AAAAAAAAAfw/ddCMvZEN604/s640/blogger-image--171720503.jpg',
+  },
+]
